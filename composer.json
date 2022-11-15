@@ -1,0 +1,19 @@
+{
+    "name": "mh3yad/php_mvc",
+    "description": "simple  mcv framework",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "mohamed ayad",
+            "email": "mh3yad@gmail.com"
+        }
+    ],
+    "require": {
+      "ext-pdo": "*",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
