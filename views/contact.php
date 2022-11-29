@@ -1,26 +1,25 @@
 <?php
+use app\core\form\Form;
+use app\core\Model;
 ?>
-<form method="post">
-    <h3>Drop Us a Message</h3>
+<?php
+
+/**
+ * @var Model $model
+ */
+$form = Form::start('post','/contact'); ?>
     <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+        <div class="col-6">
+            <div class="row">
+                <div class="col-12"><?= $form->field($model,'name');?></div>
             </div>
-            <div class="form-group">
-                <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
-            </div>
-            <div class="form-group">
-                <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
-            </div>
-            <div class="form-group">
-                <input type="submit" name="btnSubmit" class="btn btn-primary" value="Send Message" />
+            <div class="row">
+                <div class="col-12"><?= $form->field($model,'email')->email();?></div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
-            </div>
-        </div>
+        <div class="col-6"><?= $form->textArea($model,'message');?></div>
     </div>
-</form>
+    <button class="btn btn-primary form-control">submit</button>
+<?php Form::end();?>
+
+
